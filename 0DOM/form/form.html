@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>禁用和启用文本框</title>
+</head>
+<body>
+    <input type="text" value="JavaScript" placeholder="输入内容">
+    <input type="password" value="123123" placeholder="输入内容">
+    <button>禁用</button>
+    <button>启用</button>
+    
+    <script>
+        let btnList = document.getElementsByTagName('button')
+        let input = document.getElementsByTagName('input')[0]
+        let btn1 = btnList[0]
+        let btn2 = btnList[1]
+
+        btn1.onclick = function () {
+            input.disabled = true
+        }
+
+        btn2.onclick = function () {
+            input.disabled = false
+        }
+    </script>
+</body>
+</html>

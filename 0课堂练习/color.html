@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="copyright">
+    <title>随机变化背景色</title>
+    <style>
+        #div1 {
+            width: 2000px;
+            height: 2000px;
+            background: rgb(255, 0, 0);
+        }
+    </style>
+    <script>
+        //这个随机函数公式要记住
+        // function rnd(m, n) {
+        //     return parseInt(Math.random() * (n - m) + m);
+        // };
+
+        // setInterval(() => {
+        //     var oDiv = document.getElementById('div1');
+        //     oDiv.style.background = 'rgb(' + rnd(0, 256) + ', ' + rnd(0, 256) + ', ' + rnd(0, 256) + ')';
+        // }, 1000);
+        function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min
+            }
+
+            setInterval(() => {
+                const box = document.getElementById('box')
+                const r = getRandom(0, 255)
+                const g = getRandom(0, 255)
+                const b = getRandom(0, 255)
+                const color = `rgba(${r},${g},${b},0.8)`
+                // console.log(color)
+                box.setAttribute('style', `background-color:${color}`)
+            }, 1000)
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

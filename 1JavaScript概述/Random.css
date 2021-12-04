@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.tittle {
+    text-align: center;
+}
+
+
+.bg {
+    background-color: antiquewhite;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+     
+}
+
+.imgDiv{
+    text-align: center;
+    margin: 30px auto;
+}
+
+.imgsize{
+    border-radius:20px;
+    height:400px; 
+    width:400px;
+}

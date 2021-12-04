@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片画廊</title>
+</head>
+<style>
+    ul{
+        padding: 0;
+    }
+    li{
+        float: left;
+        list-style: none;
+        padding: 16px;
+    }
+
+    li a img{
+        border: 0;
+    }
+    .clear{
+        clear: both;
+    }
+    #big-img{
+        display: none;
+        height: 300px;
+        width: 300px;
+        position: absolute;
+        z-index: 22;
+    }
+    a:hover #big-img{
+        display: block;
+    }
+    #mask{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0,0.6);
+    }
+
+    .preview{
+        width: 800px;
+        height: 500px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -400px;
+        margin-top: -250px;
+    }
+    
+</style>
+<body>
+    <h2>图片画廊</h2>
+
+    <ul id="image-gallery">
+        <li>
+            <a class="show-big-pic" href="./img/1.jpg" title="图片1">
+                <img src="./img/1 (2).jpg" alt="./img/1 (2).jpg" width="100">
+                <img src="./img/1.jpg" id="big-img">
+            </a>
+        </li>
+
+        <li>
+            <a href="./img/2 (2).jpg" title="图片1">
+                <img src="./img/2 (2).jpg" alt="./img/1 (1).jpg" width="100">
+                <img src="./img/2.jpg" id="big-img">
+            </a>
+        </li>
+
+        <li>
+            <a href="./img/3 (2).jpg" title="图片1">
+                <img src="./img/3 (2).jpg" alt="./img/1 (1).jpg" width="100">
+                <img src="./img/3.jpg" id="big-img">
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+    <img id="image" src="./img/150.png" width="150" />
+    <p id="des">选择一个图片</p>
+
+    <div id="mask">
+        <img id="image" class="preview">
+    </div>
+
+    <script>
+        //1
+        let ul = document.getElementById('image-gallery')
+        let arr =ul.getElementsByTagName('a')
+        let img = document.getElementById('image')
+        let des = document.getElementById('des')
+        // console.log(arr[0])
+        //2
+        for (let index = 0; index < arr.length; index++) {
+            const element = arr[index];
+            element.onclick = function () {
+                img.src = this.href
+                //如何阻止默认事件
+                return false
+                
+            }
+            
+        }
+        let imgList = document.getElementsByName('img')
+        for(let index = 0;index<imgList.length;index++){
+            const img = array[index];
+
+            img.onclick = function(){
+                this.src=this.parentNode.href
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

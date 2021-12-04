@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call示例</title>
+</head>
+<body>
+    <script>
+            const name = '小王',
+             age = 20; 
+             let obj = {
+                name, age,
+                myFun: function () {
+                    console.log(`姓名:${this.name}，年龄:${this.age} `);
+                }
+            }
+const student1 = {
+                    name: '张三',age: 18
+                }
+const student2 = {
+                    name: '李四',age: 19
+                }
+const student3 = {
+                    name: '王五',age: 20
+                }
+obj.myFun()
+obj.myFun.call(student1)
+obj.myFun.apply(student2)
+obj.myFun.bind(student3)()
+
+    </script>
+</body>
+</html>

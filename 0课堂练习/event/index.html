@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event对象</title>
+    <style>
+        div{
+            border: 1px solid grey;
+            padding: 10px;
+            height: 30px;
+            width: 60px;
+            text-align: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>点击</div>
+    <script>
+        // let div = document.getElementsByTagName('div')[0]
+        // div.onclick = function(){
+        //     console.log(event)
+        // }
+        document.onclick = function(){
+            event = event || window.event
+            console.log(event)
+            console.log(event.timeStamp)
+            console.log(event.bubbles)
+            console.log(event.button)
+            console.log(event.pageX)
+            console.log(event.pageY)
+            console.log(event.screenX)
+            console.log(event.screenY)
+            console.log(event.target)
+            console.log(event.type)
+            console.log(event.clientX)
+            console.log(event.clientY)
+        }
+    </script>
+</body>
+</html>

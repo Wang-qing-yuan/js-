@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符</title>
+</head>
+<body>
+   <script>
+       document.write("<h1>运算符</h1>")
+       document.write("<h2>赋值运算符</h2>")
+        var x = 3; 
+        document.write("x="+x+"<br>")
+        var y = 4;
+        document.write("y="+y+"<br>")
+        x = y; 
+        document.write("x=y<br>x="+x)
+
+        document.write("<h2>typeof运算符</h2>")
+        document.write("用 typeof 运算符来查看值得类型，它返回的是类型的字符串值<br>")
+            typeof undefined === "undefined"// true
+            document.write('typeof undefined === "undefined"')
+            document.write(typeof undefined === "undefined")
+
+            document.write("<br>"+'typeof true==="boolean"')
+            document.write(typeof true==="boolean"+"<br>")
+
+            document.write("<br>"+'typeof 42==="number"')
+            document.write(typeof 42==="number"+"<br>")
+
+            document.write("<br>"+'typeof"42"==="string"')
+            document.write(typeof"42"==="string"+"<br>")
+
+            document.write("<br>"+'typeof {lift: 42} ==="object"')
+            document.write(typeof {lift: 42} ==="object"+"<br>")
+
+            document.write("<br>"+'typeof Symbol() ==="symbol"')
+            document.write( typeof Symbol() ==="symbol"+"<br>")
+
+            document.write("<h2>算术运算符</h2>")
+            var x = 12 + 3;
+             document.write("var x = 12 + 3;x="+x+"<br>"); 
+             var x=10;
+             var y=x+7+20+45+6548;
+             document.write("var x=10;var y=x+7+20+45+6548;y="+y+"<br>");
+
+              var x=10*9;
+              document.write("var x=10*9;x="+x+"<br>");
+              var x=100/5;
+              document.write("var x=100/5;x="+x+"<br>");
+              var num=10;
+              console.log(num==8) 
+
+              
+            document.write("<h2>比较运算符</h2>")
+            document.write("等于（==）运算符检查操作数的值是否相等,返回true或false。<br>")
+            var num=10;
+            document.write("var num=10;num==8")
+            document.write(num==8)
+
+            document.write("<h2>逻辑运算符</h2>")
+            document.write("(4 > 1) && (10 < 15)")
+
+            document.write("<h2>三元运算符</h2>")
+            document.write(" var variable= (condition) ? value1: value2")
+            age =12;
+            var isAdult = (age < 18) ? "未成年人" : "成年人";
+
+            document.write("<br>"+isAdult)
+
+            document.write("<h2>+=赋值运算符</h2>")
+            var a=5;
+            var b=6;
+            var c='hello ';
+            var d='Nier';
+            a+=b; 
+            document.write("var a=5;var b=6;var c='hello ';var d='Nier';")
+            document.write("a+=b;a="+ a)
+            document.write("<br>c+=d;c="+ c)
+
+            document.write("<h2>基本字符串</h2>")
+        var coursename="JavaScript 微课";
+        var coursename='JavaScript 微课';
+        var character=coursename[5];
+        document.write(character)
+        
+        document.write("<h2>特殊字符串</h2>")
+        var intro="I'm Loen";
+        var answer='He is called "Lusi"';
+        var intro='I\'m Loen';
+        var answer="He is called \"Lusi\"";
+        var intro='I\'m Loen \nThis is My List';
+        var txt="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var len=txt.length;
+        var myString1="我在学习";
+        var myString2="JavaScript编程语言";
+        document.write(myString1+myString2);
+        var myName="Loen";
+        var myStr="My name is "+myName+" and I am well";
+        var myStr="Bob";
+        myStr[0] ="J"; 
+
+
+   </script> 
+</body>
+</html>

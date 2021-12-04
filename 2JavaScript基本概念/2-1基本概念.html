@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本概念</title>
+</head>
+
+<body>
+    <!-- <h2>我的第一个 JavaScript</h2> -->
+    <script>
+        document.write("<h1>变量</h1>")
+        document.write("<h2>使用变量</h2>")
+        var x = "x=你好 JavaScript";
+        document.write("<h2>变量的命名</h2>")
+        document.write(x);
+        document.write("<br>")
+        document.write("X=" + typeof X + "<br>JavaScript区分大小写的");
+
+        document.write("<h1>数据类型</h1>")
+        var hello = 'hello world';
+        var age = 21;
+        var live = true;
+        var girlfriend = null;
+        var favsong = undefined;
+        var Car = {
+            'name': '奔驰',
+            'status': '漏油'
+        };
+        document.write(hello + "<br>age:" + age + "<br>live:" + live + "<br>girlfriend:" +
+            girlfriend + "<br>favsong:" + favsong + "<br>车名字：" + Car.name + "<br>车状态:" + Car.status);
+        document.write("<h2>布尔值</h2>")
+
+        var a=true;
+        var b=false
+        document.write(a +"和"+ b +"<br>")
+
+        var y=123e5;     
+        var z=123e-5;
+        document.write("极大或极小的数字可以通过科学（指数）计数法来书写,例如："+
+        y +"和"+ z +"<br>")
+
+        document.write("<h2>字符串</h2>")
+        document.write("字符串可以是引号中的任意文本。您可以使用单引号或双引号<br>")
+        document.write("使用反斜杠（\）转义处理字符串中的单/双引号")
+        var sayHello='Hello! \'我是一名JavaScript程序员.\' ';
+        document.write(sayHello)
+
+        document.write("<h2>undefined和null </h2>")
+        //null和undefined值相等，类型不等
+        //=== 是严格相等，要求类型和值都相等
+        //=是赋值运算，而==判断值是否相等，===是判断的是值及类型是否完全相等
+        document.write("null指空值<br>undefined指没有值")
+        var p;
+        document.write("<br>var p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ typeof p+"<br>")
+        var q=42;
+        document.write("var q=42;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ typeof q+"<br>")
+        p = q;
+        document.write("p = q;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+typeof q)
+        
+
+
+
+    </script>
+</body>
+
+</html>

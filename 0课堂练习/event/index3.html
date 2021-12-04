@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品放大镜</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    width: 350px;
+    height: 350px;
+    margin: 100px;
+    border: 1px solid gray;
+    position: relative;
+}
+.big{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 310px;
+    border: 1px solid gray;
+    display: none;
+}
+.small{
+    position: relative;
+}
+.mask{
+width: 150px;
+height: 150px;
+background: rgba(255, 255, 0, 0.4);
+position: absolute;
+top: 0;
+left: 0;
+cursor: move;
+display: none;
+}
+img{
+    vertical-align: top;
+}
+</style>
+<body>
+   <div class="box">
+       <div class="small">
+           <img src="https://wwwwang.oss-cn-beijing.aliyuncs.com/three/202111191456115.jpg" alt="小图">
+           <div class="mask"></div>
+       </div>
+       <div class="big">
+        <img src="https://wwwwang.oss-cn-beijing.aliyuncs.com/three/202111191456113.jpg" alt="大图">
+    </div>
+   </div> 
+   <script>
+       window.onload = function () {
+           //1.获取相关元素(各种不同的写法)
+           let box = document.getElementsByClassName("box")[0];
+           let small = box.firstElementChild || box.firstChild;
+           let big = box.children[1];
+           let mask = small.children[1];
+           let bigImg = big.children[0];
+
+           //显示
+    function show(ele) {
+        ele.style.display = "block";}
+    //隐藏
+    function hide(ele){
+        ele.style.display = "none";}
+
+      
+       //鼠标放上去显示大盒子和遮罩层，移开隐藏(为小盒子绑定事件)
+       small.onmouseenter = function () {
+        show(mask);
+        show(big);
+    }
+        small.onmouseleave = function () {
+        hide(mask);
+        hide(big);
+    }
+
+        //3.老三步和新五步（遮罩层跟随移动)
+//绑定的事件是onmousemove，而事件源是small(只要在小盒子上移动1像素，遮罩层也要跟随)
+small.onmousemove = function (event){
+//新五步
+event = event || window.event;
+//想要移动遮罩层，必须要知道鼠标在small小图中的位置
+let pageX = event.pageX
+let pageY = event.pageY
+//x: mask的left值，y: mask的top值
+//除以2，可以保证鼠标在mask的中间
+console.log(mask.offsetWidth+">>>width")
+console.log(mask.offsetHeight+">>>height")
+let x = pageX - box.offsetLeft - mask.offsetWidth / 2
+let y = pageY - box.offsetTop - mask.offsetHeight / 2
+//移动遮罩层
+console.log(small.offsetHeight);
+mask.style.left = x+"px"
+mask.style.top = y +"px"
+//3.右侧的大图片等比例移动
+//大图片走的距离/mask盒子的距离=大图片/小图片
+let percent = bigImg.offsetWidth / small.offsetWidth;
+//知道比例，就可以移动大图片了
+let xx = percent * x;
+let yy = percent * y;
+bigImg.style.marginTop = -yy +"px";
+bigImg.style.marginLeft = -xx + "px" ;
+}
+}
+   </script>
+</body>
+</html>

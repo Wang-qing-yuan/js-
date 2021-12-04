@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>回调函数</title>
+        <body>
+            <div id = "demo"></div>
+            <script>
+                var numbers = [64,45,72,11,49]
+                function myFunction(item,index){
+                    var demo = document.getElementById('demo')
+                    demo.innerHTML = demo.innerHTML+'index['+index+']:'+item+'<br>'
+                }
+                numbers.forEach(myFunction)
+            </script>
+        </body>
+    </head>
+</html>

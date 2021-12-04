@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>核心对象</title>
+        <script>
+            //对象
+            var  str = "Hello,Nier";
+            var a = str.toLowerCase();
+            var b = str.toUpperCase();
+            var c = "  Hello world ".trim();
+            console.log(a)
+            console.log(b)
+            console.log(c)
+            var str = "Hello world,welconme to the w3cschool.";
+            var n = str.indexOf("welconme");
+            var c = str.indexOf("loen");
+            console.log(n)
+            console.log(c)
+            var str = "Mr Blue has b blue house and a blue car and a blue hat";
+            var n = str.replace("bule","red");
+            var c = str.replace(/bule/g,"red");
+            console.log(n)
+            console.log(c)
+            var str = "Hello world";
+            document.write(str.substring(3)+"<br>");
+            document.write(str.substring(3,7));
+            //返回1-10之间的随机数
+            console.log(Math.floor((Math.random()*10)+1));
+        </script>
+    </head>
+    <body></body>
+</html>

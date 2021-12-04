@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板字符串</title>
+</head>
+<body>
+    <div id="result">
+        hello
+    </div>
+    <div id="result">
+
+    </div>
+    <ul>
+        <li>
+            <a href="#">链接1</a>
+        <ul>
+        <li>
+            <a href="#" style="background-color: #9b95c9;width: 100px;height: 200;display: inline-block;">链接2</a>
+        <ul>
+    </ul>
+    <button onclick="linkElements">显示超链接<tton>
+    <script> 
+        const result = {
+  name: 'yzugi',
+  age: 21,
+  gender: '女'
+}
+
+function getName(){
+  return 'baidu'
+}
+
+const html = 
+`<div>
+  <h3>对象属性</h3>
+  <li>${result.name}</li>
+  <li>${result.age}</li>
+  <li>${result.gender}</li>
+</div><hr/>`
+
+document.getElementById('result').innerHTML = html
+
+function linkElements(){
+  const hrtfString = `https://www.${getName()}.com`
+  var link = document.getElementsByTagName('a')[0]
+  console.log(link)
+  link.innerHTML = '百度'
+  link.setAttribute('href, hrefString')
+  link.setAttribute('style', 'background-color:red;height:200px;display:inline-block;')
+}
+
+
+//document.getElementById(`result`).innerHTML = html
+
+
+//方法1
+let height = parseFloat(prompt("输入身高，单位是米"));
+let weight = parseFloat(prompt("输入体重，单位是公斤"));
+
+const BMI = weight / Math.pow(height, 2);
+
+if (BMI < 18.5) {
+  alert("过轻");
+} else if (BMI < 24.999) {
+  alert("正常");
+} else if (BMI < 27.999) {
+  alert("过量");
+} else if (BMI < 32) {
+  alert("肥胖");
+} else {
+  alert("非常肥胖");
+}
+
+//写法2：switch
+let height = parseFloat(prompt('输入身高，单位是米'))
+let weight = parseFloat(prompt('输入体重，单位是公斤'))
+//step:BMI指数计算
+const BMI = weight / Math.pow(height,2)
+switch(true){
+    case BMI < 18.5:alert('过轻');break
+    case BMI < 24.999 && BMI > 18.5:alert('正常');break
+    case BMI < 27.999 && BMI > 24.999:alert('过重');break
+    case BMI <=32 && BMI >28:alert('肥胖');break
+    case BMI >32:alert('非常肥胖')
+    default:alert('输入错误');break
+}
+
+
+let score = 96;
+let degree = parseInt(score /10)
+
+switch (degree) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+  console.log('不及格')
+  break
+  case 6:
+  console.log('及格')
+  case 7:
+  console.log('中等')
+  case 8:
+  console.log('良好')
+  case 9:
+  case 10:
+  console.log('优秀')
+  break
+  default:
+  console.log("error")
+  break
+}
+
+
+        
+    </script>
+</body>
+</html>

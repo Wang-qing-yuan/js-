@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM节点操作</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fff;
+            font-size: 14px;
+        }
+
+        .container {
+            width: 80vw;
+            /* height: 50vh; */
+            margin: 0 auto;
+            background-color: #7fb1eb;
+            /* display: flex;
+            flex-wrap: wrap;
+            justify-content: center; */
+            /* padding-left: 10px;
+            padding-top: 10px; */
+            /* align-items: flex-start; */
+        }
+
+        .wrapper {
+            /* display: flex; */
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 500px;
+            height: auto;
+            margin: 0 200px;
+            justify-content: center;
+            background-color: #fff;
+            /* margin: 10px; */
+            border: 10px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+
+        .newDiv {
+            width: 500px;
+            height: auto;
+            margin: 0 200px;
+            justify-content: center;
+            background-color: #fff;
+            /* margin: 10px; */
+            border: 10px solid rgb(0, 0, 0);
+            padding: 10px;
+        }
+        /* .newBtn{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button>点击增加一个新的文章<button>
+        <div class="wrapper">
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum itaque ipsum pariatur? Rerum,
+                     dolores culpa? At, cum laborum? Quam, quasi rem? Dolorum vero excepturi, et hic corporis
+                      dignissimos voluptatibus doloribus?</p>
+            </div>
+
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum itaque ipsum pariatur? Rerum,
+                     dolores culpa? At, cum laborum? Quam, quasi rem? Dolorum vero excepturi, et hic corporis
+                      dignissimos voluptatibus doloribus?</p>
+            </div>
+
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum itaque ipsum pariatur? Rerum,
+                     dolores culpa? At, cum laborum? Quam, quasi rem? Dolorum vero excepturi, et hic corporis
+                      dignissimos voluptatibus doloribus?</p>
+            </div>
+
+            <div class="box">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum itaque ipsum pariatur? Rerum,
+                     dolores culpa? At, cum laborum? Quam, quasi rem? Dolorum vero excepturi, et hic corporis
+                      dignissimos voluptatibus doloribus?</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        //增加
+        let btn = document.getElementsByTagName('button')[0]
+        btn.onclick = function() {
+            // 1.创建一个div，并设置样式
+            let div = document.createElement('div')
+            var btn=document.createElement("button");
+            // var btnText = document.createTextNode("按钮")
+            // document.body.appendChild(btn);
+        //    div.style.backgroundColor='blue'
+        var myText = document.createTextNode("新增加的页面");
+        div.appendChild(myText);
+            div.setAttribute("class","newDiv")
+            // div.setAttribute("class","newBtn")
+           
+            // 2.将div插入文档。
+            let parentDiv = document.getElementsByClassName("wrapper")[0]
+            parentDiv.appendChild(div)
+           
+        }
+
+      
+    </script>
+</body>
+<ml>

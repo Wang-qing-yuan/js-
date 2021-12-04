@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/* 去掉边框，去掉轮廓 */
+fieldset,
+img,
+input,
+button {
+border: none;
+margin: 0;
+padding: 0;
+outline-style: none;
+}
+
+/*去掉列表的圆点*/
+ul,
+ol {
+    list-style: none;
+}
+
+/*表单输入字体指定*/
+input {
+padding-top:0;
+padding-bottom: 0;
+font-family: "Simsun"，"宋体";
+}
+
+/*选择框，输入框的垂直对齐方式*/
+select,
+input {
+    vertical-align: middle;}
+    
+
+
+    

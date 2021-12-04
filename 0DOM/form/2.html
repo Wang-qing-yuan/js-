@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本框失去焦点</title>
+</head>
+<style>
+    label{
+        display: block;
+    }
+    .show{
+            display: block;
+        }
+    .hide{
+            display: none;
+        }
+</style>
+<body>
+    <label for="input1">
+       京东：  <input type="text" id="input1" value="相机">
+    </label>
+   
+    <label for="input2">
+      淘宝：  <input type="text" id="input2" value="电脑">
+    </label>
+
+    placeholder: <input type="text" placeholder="placeholder" value="nihao">
+    
+    <script>
+        //京东输入框获得焦点，清空内容
+        let input1 = document.getElementById('input1')
+        let input2 = document.getElementById('input2')
+        let lab = document.getElementsByTagName('label')[1]
+
+
+        
+        input2.oninput = function(){
+            //在输入框输入文字，清空内容，失去焦点显示文字
+            if (this.value === '') {
+                lab.className = 'show'
+            }else{
+                lab.className = 'hide'
+            }
+        }
+         //京东输入框获得焦点，清空内容
+        input1.onfocus = function(){
+            this.value = ''
+            this.style.color = 'red'
+        }
+
+        input1.onblur = function(){
+            this.value = '相机'
+            this.style.color = 'black'
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div跟随鼠标移动</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    #box{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        border-radius: 100%;
+        cursor: pointer;
+     
+    }
+</style>
+<body>
+    <div id="box">
+        div跟随鼠标移动
+    </div>
+    <script>
+        let box=document.getElementById('box')
+        document.onmousemove=function(event){
+            event=event || window.event
+            //获取鼠标当前页面位置
+            let pageX = event.pageX ||scroll().left + event.clientX
+            let pageY = event.pageY ||scroll().top +event.clientY
+            console.log(pageX)
+            console.log(pageY)
+
+            //改变div的位置，div一定要绝对定位
+            box.style.left = pageX-50 + "px"
+            box.style.top = pageY -50+ "px"
+
+
+
+        }
+
+        //scroll函数封装
+        function scroll(){
+            //返回对象
+            return{
+                left: window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop,
+                right: window.pageXOffset || document.body.scrollLeft || document.documentElement.scrollLeft
+            }
+        }
+    </script>
+</body>
+</html>

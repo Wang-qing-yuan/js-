@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //数组
+        let arr = ['张三',23,'male',1.88]
+        console.log(arr)
+        //对象
+        let person = {}
+        person.name='Tom'
+        person.age=23
+        console.log(person)
+
+        //属性的值是函数
+        let obj = new Object();
+        obj.name = 'Tom'
+        obj.sayHello=function(){
+            console.log('hello')
+            console.log('world')
+            return 1
+        }
+        console.log(obj.name)
+        console.log(obj.sayHello)
+        //没有返回值，所以输出undefined
+        console.log(obj.sayHello())
+
+
+
+        // let obj1 = new Object()
+        // obj1.test =undefined
+        // let obj2 = new Object()
+        // obj2.name = 'Tom'
+        // obj1.test =obj2
+
+        // console.log(obj1.test.name)
+
+
+        //传值
+        let a =1
+        let d =a
+        b =2
+        console.log(`a=${a},b=${b}`)
+
+        //传址
+        let obj1 = new Object()
+        obj1.name = '孙悟空'
+        let obj2 =obj1
+        console.log(`${obj1.name},${obj2.name}`)
+        obj2.name ='猪八戒'
+        console.log(obj2)
+        // let obj1 = new Object()
+        // obj1.name = '孙悟空'
+        // let obj2 = Object.assign({},obj1)
+    </script>
+    
+</body>
+</html>

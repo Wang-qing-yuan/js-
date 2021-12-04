@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全选和反选</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .my-table{
+        width: 300px;
+        margin: 100px auto;
+    }
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid white;
+        width: 500px;
+    }
+
+    th,
+    td{
+        border: 1px solid white;
+        color: plum;
+        padding: 10px;
+    }
+    th{
+        font: bold 16px "微软雅黑";
+        background-color: #4095c4;
+        color: #000;
+    }
+    td{
+        font: bold 14px "微软雅黑";
+        
+    }
+    tbody tr{
+        background-color: antiquewhite;
+    }
+    tbody tr:hover{
+        cursor: pointer;
+        background-color: #4095c4;
+    }
+</style>
+<body>
+    <div class="my-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="all" checked="true">
+                    </th>
+                    <th>
+                        菜名
+                    </th>
+                    <th>
+                        店名
+                    </th>
+                </tr>
+            </thead>
+           <tbody id="content">
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>
+                    菜品1
+                </td>
+                <td>
+                    烧烤店
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>
+                    菜品2
+                </td>
+                <td>
+                    海底捞
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>
+                    菜品3
+                </td>
+                <td>
+                    奶茶店
+                </td>
+            </tr>
+           </tbody>
+        </table>
+    </div>
+
+    <script>
+        window.onload = function(){
+            // alert('load')
+          let allBtn =  document.getElementById('all')
+          let tBody = document.getElementById('content')
+          let inputList = tBody.getElementsByTagName('input')
+
+          //全选
+          allBtn.onclick=function(){
+            //   for (let index = 0; index < inputList.length; index++) {
+            //      if(allBtn.checked === true){
+            //          inputList[index].checked = true
+            //      } else {
+            //          inputList[index].checked = false
+            //      }
+                  
+            //   }
+            for (let index = 0; index < inputList.length; index++) {
+                inputList[index].checked = this.checked
+                
+            }
+          }
+
+          //反选
+          for (let index = 0; index < inputList.length; index++) {
+              inputList[index].onclick = function(){
+                  let flag = true
+                  for (let i = 0; i < inputList.length; i++) {
+                     if(inputList[i].checked === false){
+                         flag = false
+                     }
+                  }
+                  allBtn.checked = flag
+              }
+              
+          }
+        }
+    </script>
+</body>
+</html>

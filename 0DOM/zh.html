@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    input{
+        outline: none;
+        background: none;
+        border: 0;
+        text-align: center;
+        width: 700px;
+    }
+    input:focus{
+        outline: none;
+    }
+    /* div{
+        margin: 100px 100px;
+    } */
+ 
+    .container{
+        background-image: linear-gradient(to bottom left, #9c5ecd , #ca8ead,#f8bd8c);
+        height: 100vh;
+        justify-content: center;
+        display: flex;
+    }
+
+    .box{
+        height: 400px;
+        width: 90%;
+        border-radius: 20px;
+        display: flex;
+        margin-top: 50px;
+    }
+    .box-a{
+        width: 20%;
+    }
+
+    li{
+        list-style-type: none;
+    }
+    #top{
+       
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        
+    }
+    #top li{
+        width: 70%;
+        margin: 0 30px 30px 30px;
+        padding: 10px;
+        background-color: #484f7f;
+        color: white;
+        border-radius: 5px;
+        /* float: left; */
+    }
+    #top li.current{
+        background: #2d3052;
+    }
+
+
+    /* 显示页面 */
+    #bottom{
+        position: relative;
+    }
+    #bottom li{
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding-left: 15px;
+        box-sizing: border-box;
+        display: none;
+    }
+    #bottom li.current{
+        display: block;
+    
+    }
+    .box-b{
+        width: 70%;
+        height: 500px;
+        
+    }
+    .box-b-a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #4a4f81;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        
+    }
+    .box-b-a-img{
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+        margin: 20px;
+    }
+    #code{
+        border: 1px solid #494f80;
+        border-radius: 10px;
+        color: #494f80;
+        margin-top: 50px;
+        font-size: 16px;
+        padding: 10px;
+        cursor: pointer;
+       
+        
+    }
+    .img-code{
+        margin-left: 500px;
+        position: relative;
+        top: -80px;
+    }
+    .picture{
+        height: 600px;
+        overflow-y: scroll;
+        justify-content: center;
+        align-items: center;
+    }
+    .pic-img{
+        height: 300px;
+        width: 45%;
+        margin: 10px;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+    <div class="container">
+        <div class="box">
+            <div class="box-a">
+        <ul id="top">
+            <li class="current">个人主页</li>
+            <li>个人相册</li>
+        </ul>
+</div>
+
+<div class="box-b">
+        <ul id="bottom">
+            <li class="current">
+                <div class="box-b-a">
+                <div style="text-align: center;">
+                    <img class="box-b-a-img" src="./img/1.jpg">
+                    <div><input id="input1" type="text" placeholder="名字" value="Hi!i'm 王庆媛!" style="font-size: 42px;color: #2d3053;"></div>
+                    <div><input type="text" placeholder="班级" value="软件工程2136" style="color: #484f7f;margin: 10px;border-bottom: 1px solid #494f80;width: 700px;"></div>
+                    <div>
+                        <input type="text" style="color: #494f80;" placeholder="个人介绍"
+                        value="我叫王庆媛，我来自美丽的贵州，性格开朗，形象可爱有着一张娃娃脸，善良的心，思想积极向上。">
+                    </div>
+                    <div style="display: flex;justify-content: center;align-items: center;">
+                    <div id="code">联系我</div></div>
+                        <img class="img-code" src="" id="im">  
+                </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="picture">
+                    <img class="pic-img" src="./img/1.jpg">
+                    <img class="pic-img" src="./img/2.jpg">
+                    <img class="pic-img" src="./img/3.jpg">
+                    <img class="pic-img" src="./img/4.jpg">
+                    <img class="pic-img" src="./img/5.jpg">
+                    <img class="pic-img" src="./img/6.jpg">
+                    <img class="pic-img" src="./img/7.jpg">
+                    <img class="pic-img" src="./img/8.jpg">
+                    <img class="pic-img" src="./img/9.jpg"> 
+                    <img class="pic-img" src="./img/10.jpg">
+                </div>
+            </li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    
+<script>
+
+    var navList=document.getElementById('top').getElementsByTagName('li');
+    var contents=document.getElementById('bottom').getElementsByTagName('li');
+    let btn = document.getElementById('code')
+    for(var i=0;i<navList.length;i++){
+        //在事件之前我先把索引给准备好
+        navList[i].setAttribute("index",i);
+        navList[i].onclick=function(){
+            for(var j=0;j<navList.length;j++){
+            //removeAttribute既可以移除自定义属性，也可以移除非自定义属性
+                navList[j].removeAttribute('class');
+            }
+            this.className="current";
+            //将索引值先给存下来
+            var num=this.getAttribute("index");
+            for(var k=0;k<contents.length;k++){
+                contents[k].removeAttribute('class');
+            }
+            contents[num].className="current";
+        }
+    }
+
+    btn.onmouseover=function(){
+        var imObject = document.getElementById("im");
+        imObject.src = "./img/code.jpg";
+      //设置图片大小
+         imObject.width = "150";
+         imObject.height = "150";
+         imObject.style.display='block'
+    }
+
+    btn.onmouseleave=function(){
+        var imObject = document.getElementById("im");
+        imObject.style.display ='none';
+    }
+
+
+  
+    
+</script>
+</body>
+</html>

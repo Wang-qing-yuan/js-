@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window对象的方法（打开、关闭窗口）</title>
+    <style>
+        a{
+            display: block;
+            margin-bottom: 5px;
+            padding: 10px;
+            text-decoration: none;
+            color: gray;
+        }
+        a:hover{
+            color: pink;
+            text-decoration: underline;
+        }
+        /* a:link{
+            color: aqua;
+        }
+        a:visited{
+            color: orange;
+        } */
+    
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;">点击打开新的页面</a>
+    <br>
+    <a href="javascript:;">点击关闭当前页面</a>
+
+
+    <script>
+        let a1=document.getElementsByTagName('a')[0]
+        let a2=document.getElementsByTagName('a')[1]
+
+        a1.onclick=setInterval(function(){
+           
+            let json={
+                "name":"hello world",
+                "fullscreen":"no",
+                "location":"no",
+                "width":"200px",
+                "height":"110px",
+                "top" :"30px",
+                "left" :"30px"
+            }
+         let newWindow  =window.open("https://www.baidu.com","_blank",json)
+        //  newWindow.moveTo(800,500)
+        newWindow.style.width = Date.now / 5 + 'px';
+       
+        },3000);
+
+        a2.onclick=function(){
+            window.close()
+        }
+    </script>
+</body>
+</html>

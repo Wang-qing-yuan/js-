@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>当前浏览器信息</title>
+</head>
+<body>
+    
+   
+    <script>
+        //当前浏览器的userAgent
+        let ua=navigator.userAgent
+        console.log(`当前浏览器的UA是:${ua}`)
+        console.log(`当前浏览器的支持的操作系统是:${navigator.platform}`)
+//         if ( /firefox/i.test(ua)) {
+//             alert( '是火狐浏览器');
+//         }else if (/chrome/i.test(ua)) {
+//             alert( '是Chrome浏览器');
+//         }else if ( /msie/i.test(ua)) {
+//             alert( '是IE浏览器');
+// }
+
+console.log('************通过screen对象获取的屏幕信息********************');
+console.log( screen.orientation);
+console.log(screen.pixelDepth);
+console.log(screen.colorDepth);
+console.log(screen.width);
+console.log( screen.height);
+console.log(screen.availwidth);
+let backLink = window.document.getElementById('back')
+backLink.onclick = function () {
+history.back()
+}
+
+    </script>
+</body>
+</html>

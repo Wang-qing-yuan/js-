@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number内置对象</title>
+</head>
+<body>
+    <script>
+        //Number.isInteger(数字)->布尔值
+        //Number.toFixed(num)->字符串
+
+        // let num = 3.456
+        // let result = num.toFixed(2)
+        // console.log(num)
+        // console.log(result)
+        // console.log(typeof num)
+        // console.log(typeof result)
+
+        //生成[x,y]内的随机整数
+        // Math.round(Math.random() *(y-x)+x)
+
+        function getRandom(min,max){
+            return Math.round(Math.random() * (max - min)+min)
+        }
+        for(let index = 0;index<10;index++) {
+            console.log(getRandom(1,3))
+        }
+
+        //随机点名
+        const arr =['许嵩','邓紫棋','毛不易','陈奕迅']
+        const index = getRandom( 0, arr.length-1 )
+        console.log(arr[index])
+
+        setInterval(() => {
+            const index = getRandom(0,arr.length-1)
+            console.log(arr[index])
+        }, 1000);
+        
+    </script>
+</body>
+</html>

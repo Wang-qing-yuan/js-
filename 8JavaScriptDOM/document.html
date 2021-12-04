@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Document对象</title>
+        <body>
+            <div id="demo"><p>cnds</p></div>
+            <div id = "demo1" style="width: 200px;">一些文本</div>
+        </body>
+        <script>
+            //通过id找元素
+            // document.getElementById(id);
+            //通过类查找元素
+            // document.getElementsByClassName(name)
+            //通过标签找元素
+            // document.getElementsByTagName(name)
+            var elem = document.getElementById("demo");
+            elem.innerHTML = "Hello World";
+            //更改样式
+            var x = document.getElementById("demo1");
+            x.style.color = "6600FF";
+            x.style.width = "300px";
+            x.style.height= "300px";
+        </script>
+        
+    </head>
+</html>

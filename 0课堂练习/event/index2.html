@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取鼠标在div中的坐标</title>
+</head>
+<style>
+    #box{
+        height: 300px;
+        width: 300px;
+        background-color: pink;
+        margin: 100px;
+        text-align: center;
+        font: 18px/30px "微软雅黑";
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div id="box"></div>
+    <script>
+        let div=document.getElementById('box');
+        div.onmousemove=function(event){
+            event = event || window.event 
+            //获取鼠标在前页面中位置
+        let pageX = event.pageX
+        let pageY = event.pageY
+        //当前鼠标在盒子中的位置=鼠标在页面中的位置-盒子的位置
+// console.log(pageX)
+// console.log(pageY)
+        let targetX = pageX - div.offsetLeft
+        let targetY = pageY - div.offsetTop
+        console.log(targetX)
+    console.log(targetY)
+        this.innerHTML=`<P>鼠标在div中的X坐标为${targetX}</p><p>鼠标在div中的Y坐标为${targetY}</p>`
+
+
+        }
+    </script>
+</body>
+</html>

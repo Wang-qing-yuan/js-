@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>JavaScript对象</title>
+        <script>
+            var person = {
+                name:'John',
+                age:31,
+                favColor:'green',
+                height:183
+            }
+            var x = person.age
+            var y =person['age']
+            console.log(x)
+            console.log(y)
+            //长度属性计算字符串
+            var conrse = {
+                name:'JS',
+                lessons:54
+                }
+            console.log(conrse.name.length)
+            //增加属性
+            var ourDog = {
+                name:'Camper',
+                legs:4,
+                tails:1,
+                friends:['everything!']
+            }
+            ourDog.bark ='bow-wow'
+            //等价于 ourDog['bark'] = 'bow-wow'
+            console.log(ourDog.bark)
+            //删除属性
+            var c1 = ourDog['tails'] //c1等于1
+            delete ourDog['tails']
+            //等价于 delete ourDog.tails
+            var c2 = ourDog['tails']
+            //c2等于undefined
+            console.log(ourDog)
+            //转换文本为大写
+            var message = 'Hello world!';
+            var x = message.toUpperCase();
+            console.log(x)
+            //对象构造器
+            function Person(firstname,lastname,age,eyecolor)
+            {
+                this.firstname = firstname;
+                this.lastname = lastname;
+                this.age = age;
+                this.eyecolor = eyecolor;
+            }
+            var myFather = new Person('John','Doe',50,'blue')
+            var mymother = new Person('Sally','Rally',48,'green')
+            console.log(myFather.age)
+            console.log(mymother.firstname)
+            //this访问对象属性和方法
+            function Person(name,age){
+                this.name = name;
+                this.age = age;
+                this.changName = function(name){
+                    this.name = name;
+                }
+            }
+            var p = new Person('Loen',28)
+            p.changName('John')
+            console.log(person.name)
+            //外部定义函数
+            function person(name,age){
+                this.name = name
+                this.age = age
+                this.yearOfBirth = bornYear
+            }
+            function bornYear(){
+                return new Date().getFullYear() - this.age
+            }
+            
+        </script>
+    </head>
+    <body></body>
+</html>

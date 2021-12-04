@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒计时</title>
+    <style>
+        #result{
+            width: 1000px;
+            height: 200px;
+            margin: 200px auto;
+            text-align: center;
+            font-size: 30;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        let div=document.getElementById('result')
+        let timer = setInterval(() => {
+            console.log('2021-10-16')
+        }, 1000);
+        function countDown(myTime) {
+            let nowTime =new Date()
+            let future = newDate(myTime)
+            let timeSub = future.getTime() - nowTime.getTime()
+
+            let day = parseInt(timeSub /1000 /60 /60 /24)
+            let hour = parseInt(timeSub /1000 /60 /60 %24)
+            let minute = parseInt((timeSub /1000 /60 )%60)
+            let second = parseInt((timeSub /1000)%60)
+            let millSecond = parseInt(timeSub %1000)
+            //细节补零
+            day = day<10?'0'+day:day
+            hour = hour < 10 ? "0" + hour : hour;
+            minute = minute < 10 ? "0" + minute : minute;
+            second = second < 10 ? "0" + second : second;
+
+            if(millSecond<10){
+                millSecond='00'+millSecond
+            }else if(millSecond <100){
+                millSecond='0'+millSecond
+            }
+            div.innerHTML=`距离发布会还有：${day}天${hour}小时${minute}分钟${second}秒${millSecond}毫秒`
+        }
+        
+    </script>
+</body>
+</html>

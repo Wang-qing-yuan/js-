@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单注册高亮显示</title>
+</head>
+<style>
+    .right{
+        border: 2px solid green;
+    }
+
+    .wrong{
+        border: 2px solid red;
+    }
+</style>
+<body>
+    账户：<input type="text" onblur="fn(this)">
+    密码：<input type="password" onblur="fn(this)">
+    <script>
+        function fn(a){
+            if(a.value.length <12 &&a.value.length >8){
+                a.className = 'right'
+            }else{
+                a.className = 'wrong'
+            }
+        }
+    </script>
+</body>
+</html>

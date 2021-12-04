@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="CN-zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机图片</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="../1JavaScript概述/Random.css">
+</head>
+<body class="bg">
+    <h1 class="tittle">随机图片</h1>
+    <div class="imgDiv">
+        <img id="myImg" height="200" width="200" class="imgsize" src="https://source.unsplash.com/random/200×200"/>
+        <div style="margin-top: 10px;">
+            <p><button type="button" class="btn btn-default" onclick="changeImg()">换一张</button></p>
+        </div>
+        
+    </div>
+    <script>
+        function changeImg(){
+    var i = Math.ceil(Math.random()*10);
+    document.getElementById("myImg").src="https://source.unsplash.com/random/" + i;
+}
+    </script>
+</body>
+</html>
